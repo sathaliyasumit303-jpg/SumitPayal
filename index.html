@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo Middle Class Family - Auto Riksha Tourist Service Botad</title>
+    <!-- Tailwind CSS for modern UI styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Yatra One for Indian aesthetic feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rikshaYellow: '#FFC72C',
+                        rikshaDark: '#1E293B',
+                        rikshaGreen: '#15803D',
+                        rikshaGold: '#D97706'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        yatra: ['Yatra One', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #FFC72C;
+            border-radius: 10px;
+        }
+        @keyframes drive {
+            0% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(-10px); }
+        }
+        .animate-drive {
+            animation: drive 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased custom-scrollbar">
+
+    <!-- Top Alert Discount Banner -->
+    <div class="bg-gradient-to-r from-rikshaYellow via-amber-400 to-rikshaYellow text-slate-950 font-semibold py-2 px-4 text-center text-xs md:text-sm shadow-inner transition-all duration-300">
+        <span class="inline-block animate-bounce mr-2">🎉</span>
+        <span data-i18n="specialOffer">Special Festival Discount</span>: 
+        <span class="font-bold underline" data-i18n="discountText">Flat 5% OFF on booking your Salangpur Dev or Gadhada Dham round trips!</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">
+            
+            <!-- Logo & Brand Info -->
+            <a href="#" class="flex items-center space-x-3">
+                <div class="bg-rikshaYellow p-2.5 rounded-xl shadow-md border border-amber-400">
+                    <svg class="w-8 h-8 text-slate-900 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19.5 9h-2.1l-.8-2.4C16.2 5.6 15.3 5 14.3 5H9.7c-1 0-1.9.6-2.3 1.6L6.6 9H4.5C3.1 9 2 10.1 2 11.5V15c0 .6.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.5-1.3 3.9-3h4.2c.4 1.7 2 3 3.9 3s3.5-1.3 3.9-3h1.1c.6 0 1-.4 1-1v-3.5c0-1.4-1.1-2.5-2.5-2.5zm-12.5 9c-1.1 0-2-.9-2-2s2-2 2-2 2 .9 2 2-.9 2-2 2zm10 0c-1.1 0-2-.9-2-2s2-2 2-2 2 .9 2 2-.9 2-2 2zM15 9H9l.7-2h4.6l.7 2z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight font-yatra" data-i18n="brand">Lo Middle Class Family</h1>
+                    <p class="text-xs text-amber-600 font-bold uppercase tracking-wider" data-i18n="subtitle">Auto Riksha Tourist Service - Botad</p>
+                </div>
+            </a>
+
+            <!-- Interactive Language Switcher -->
+            <div class="flex items-center bg-slate-100 p-1 rounded-xl shadow-inner border border-slate-200">
+                <button onclick="changeLanguage('gu')" data-lang="gu" class="lang-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">ગુજરાતી</button>
+                <button onclick="changeLanguage('hi')" data-lang="hi" class="lang-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-rikshaYellow text-slate-900 font-bold">हिंदी</button>
+                <button onclick="changeLanguage('en')" data-lang="en" class="lang-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">English</button>
+            </div>
+
+            <!-- Direct Quick Call Header Button -->
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="tel:+917778867800" class="flex items-center bg-rikshaGreen text-white px-5 py-2.5 rounded-xl shadow-md hover:bg-green-700 transition duration-300 transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-phone-volume mr-2 animate-bounce"></i>
+                    <span class="font-bold tracking-wide">7778867800</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-rikshaDark to-slate-900 text-white overflow-hidden py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffcc00_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-rikshaYellow rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-rikshaGreen rounded-full blur-3xl opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Info Block -->
+            <div class="space-y-6 text-center lg:text-left">
+                <span class="inline-flex items-center gap-2 bg-rikshaYellow/10 border border-rikshaYellow/30 text-rikshaYellow text-sm font-semibold px-4 py-1.5 rounded-full" data-i18n="tagline">
+                    <i class="fa-solid fa-shield-halved"></i> Safe, Comfortable & Affordable Rides in Botad
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-white" data-i18n="heroTitle">
+                    Explore Botad City & Famous Temples Safely
+                </h2>
+                <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0" data-i18n="heroDesc">
+                    Your trusted travel partner for Botad Station, Bus Stand, Salangpur Kashtabhanjan Dev Hanumanji Temple, Gadhada Swaminarayan, and local rides.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#booking-section" class="bg-rikshaYellow hover:bg-amber-400 text-slate-950 px-8 py-4 rounded-xl font-bold shadow-lg shadow-rikshaYellow/20 hover:shadow-rikshaYellow/30 transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center text-sm md:text-base">
+                        <i class="fa-solid fa-calendar-check mr-2"></i>
+                        <span data-i18n="bookNow">Book Your Ride Now</span>
+                    </a>
+                    <a href="#estimator-section" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-8 py-4 rounded-xl font-bold transition-all duration-300 inline-flex items-center text-sm md:text-base">
+                        <i class="fa-solid fa-calculator mr-2 text-rikshaYellow"></i>
+                        <span data-i18n="estimateFare">Estimate Fare</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 pt-6 max-w-md mx-auto lg:mx-0">
+                    <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/50 text-center">
+                        <i class="fa-solid fa-heart text-rose-500 text-lg mb-1 block"></i>
+                        <span class="text-xs text-slate-300 block">Family Safe</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/50 text-center">
+                        <i class="fa-solid fa-music text-blue-400 text-lg mb-1 block"></i>
+                        <span class="text-xs text-slate-300 block">Music On-board</span>
+                    </div>
+                    <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/50 text-center">
+                        <i class="fa-solid fa-battery-three-quarters text-emerald-400 text-lg mb-1 block"></i>
+                        <span class="text-xs text-slate-300 block">Charger Inside</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Interactive Graphic Block -->
+            <div class="relative flex justify-center items-center">
+                <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-dashed border-slate-700 animate-[spin_40s_linear_infinite]"></div>
+                
+                <div class="relative bg-gradient-to-tr from-slate-800 to-slate-800/90 p-6 sm:p-8 rounded-3xl border border-slate-700/80 shadow-2xl max-w-sm w-full text-center">
+                    <div class="absolute top-4 right-4 bg-rikshaGreen text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Active 24/7
+                    </div>
+                    
+                    <div class="w-40 h-40 mx-auto mb-6 bg-slate-700/40 rounded-full flex items-center justify-center border border-slate-600">
+                        <svg class="w-28 h-28 text-rikshaYellow animate-drive" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.5 9h-2.1l-.8-2.4C16.2 5.6 15.3 5 14.3 5H9.7c-1 0-1.9.6-2.3 1.6L6.6 9H4.5C3.1 9 2 10.1 2 11.5V15c0 .6.4 1 1 1h1.1c.4 1.7 2 3 3.9 3s3.5-1.3 3.9-3h4.2c.4 1.7 2 3 3.9 3s3.5-1.3 3.9-3h1.1c.6 0 1-.4 1-1v-3.5c0-1.4-1.1-2.5-2.5-2.5zm-12.5 9c-1.1 0-2-.9-2-2s2-2 2-2 2 .9 2 2-.9 2-2 2zm10 0c-1.1 0-2-.9-2-2s2-2 2-2 2 .9 2 2-.9 2-2 2zM15 9H9l.7-2h4.6l.7 2z"/>
+                        </svg>
+                    </div>
+
+                    <h3 class="text-xl font-extrabold text-rikshaYellow tracking-wide font-yatra">Lo Middle Class Family</h3>
+                    <p class="text-xs text-slate-400 mt-1">Botad Local & Tourist Pilgrimage Specialist</p>
+                    
+                    <div class="mt-6 flex flex-col gap-3">
+                        <a href="tel:+917778867800" class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-4 rounded-xl border border-slate-600 transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-rikshaYellow"></i> Direct Call: 7778867800
+                        </a>
+                        <a href="https://wa.me/917778867800?text=Hello%20Sumit-bhai,%20I%20want%20to%20book%20a%20ride%20with%20Lo%20Middle%20Class%20Auto%20Riksha%20Service." target="_blank" class="w-full bg-rikshaGreen hover:bg-green-700 text-white font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Quick WhatsApp Book
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-extrabold text-slate-950 inline-block border-b-4 border-rikshaYellow pb-2" data-i18n="aboutUs">
+                        About Us
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed" data-i18n="aboutText">
+                        We provide highly reliable, friendly, and economical Auto Riksha services in Botad, Gujarat. Specially managed to cater to middle-class families, tourists, and pilgrims seeking peaceful transport with zero hassle.
+                    </p>
+                    <div class="bg-amber-50 p-5 rounded-2xl border-l-4 border-rikshaYellow">
+                        <p class="italic text-amber-900 font-medium">
+                            "हमारा लक्ष्य है कि हर गरीब और मध्यमवर्गीय परिवार को सही और पारदर्शी दाम में सुरक्षित और शानदार सफर मिले। बोताद स्टेशन से लेकर सालंगपुर कष्टभंजन देव मंदिर तक, हम आपके सफर को आनंदमय बनाएंगे।"
+                        </p>
+                        <span class="block mt-2 text-right font-bold text-slate-800 text-sm">— सुमित सथलिया (Sumit Sathaliya), संचालक</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 mb-6" data-i18n="whyUs">Why Choose Us?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="bg-rikshaYellow/20 p-2.5 rounded-lg text-amber-600">
+                                <i class="fa-solid fa-map-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900" data-i18n="whyReason1">Local Tour Guide & Safe Drivers</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="whyDesc1">We don't just drive, we show you the best historical sights around Botad.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="bg-rikshaYellow/20 p-2.5 rounded-lg text-amber-600">
+                                <i class="fa-solid fa-scale-balanced text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900" data-i18n="whyReason2">Punctual & Fixed Pricing</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="whyDesc2">No bargaining issues, honest transparent fare estimate every time.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="bg-rikshaYellow/20 p-2.5 rounded-lg text-amber-600">
+                                <i class="fa-solid fa-sparkles text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900" data-i18n="whyReason3">Clean & Sanitized Auto</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="whyDesc3">Your health is priority. Well-maintained spacious Riksha with safety kit.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <div class="bg-rikshaYellow/20 p-2.5 rounded-lg text-amber-600">
+                                <i class="fa-solid fa-gopuram text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900" data-i18n="whyReason4">Sarangpur & Gadhada Expert</h4>
+                                <p class="text-xs text-slate-500 mt-1" data-i18n="whyDesc4">Comfortable spiritual journey with perfect timing for Aarti & Darshan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-slate-100 border-t border-b border-slate-200 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-950 font-yatra" data-i18n="ourServices">Our Specialized Services</h2>
+                <p class="text-slate-600 mt-2" data-i18n="servicesDesc">Affordable solutions designed for your comfort and budget</p>
+                <div class="w-16 h-1 bg-rikshaYellow mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-train"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg" data-i18n="railwayDrop">Railway Station Service</h3>
+                    <p class="text-xs text-slate-500 mt-2">Smooth & punctual picking or dropping at Botad Junction Railway Station, aligned with train timings.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg" data-i18n="busDrop">Bus Stand Service</h3>
+                    <p class="text-xs text-slate-500 mt-2">Always on time! Easy transfers to and from Botad Central Bus Station to any locality in town.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-hotel"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg" data-i18n="hotelDrop">Hotel & Guest House Drops</h3>
+                    <p class="text-xs text-slate-500 mt-2">Safe check-ins. Smooth transits to all key hotels, dharamshalas, and guest houses of Botad.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg" data-i18n="hospitalDrop">Hospital Pickup & Drop</h3>
+                    <p class="text-xs text-slate-500 mt-2">Prioritized and gentle transport to local general hospitals and critical clinics inside Botad.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-place-of-worship"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg" data-i18n="sightseeing">Local Sightseeing Packages</h3>
+                    <p class="text-xs text-slate-500 mt-2">We guide you through the beautiful landmarks of Botad City, markets, and historical locations.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg" data-i18n="familyTour">Family Temple Packages</h3>
+                    <p class="text-xs text-slate-500 mt-2">Special group tours designed to comfortably fit small families for peaceful spiritual outings.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-map"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-900 text-lg" data-i18n="tourPlan">Custom Tour Plans</h3>
+                    <p class="text-xs text-slate-500 mt-2">Plan your stops, your time, and customized routes on-demand at best prices.</p>
+                </div>
+
+                <div class="bg-amber-50 p-6 rounded-2xl shadow-sm border border-amber-300 flex flex-col justify-between items-center text-center">
+                    <div class="text-amber-500 text-3xl mb-2">
+                        <i class="fa-solid fa-tag"></i>
+                    </div>
+                    <h4 class="font-extrabold text-amber-900 text-sm uppercase">Flat 5% Off Applied</h4>
+                    <p class="text-[11px] text-amber-800 my-2">On booking any outstation trip or full-day city package. Contact us online.</p>
+                    <a href="#booking-section" class="bg-amber-500 text-slate-900 font-bold px-4 py-1.5 text-xs rounded-lg shadow hover:bg-amber-600 hover:text-white transition">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fare Estimator Section -->
+    <section id="estimator-section" class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-950 font-yatra" data-i18n="calculatorTitle">Smart Fare Estimator</h2>
+                <p class="text-slate-600 mt-2" data-i18n="calcSub">Check approximate transparent rates before booking. (5% Off Included)</p>
+                <div class="w-16 h-1 bg-rikshaYellow mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="bg-slate-50 p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="pickupLabel">Select Pickup Location</label>
+                        <select id="pickup-selector" onchange="calculateFare()" class="w-full bg-white border border-slate-300 text-slate-800 px-4 py-3 rounded-xl focus:ring-2 focus:ring-rikshaYellow focus:border-transparent outline-none transition font-medium">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="dropLabel">Select Destination Location</label>
+                        <select id="drop-selector" onchange="calculateFare()" class="w-full bg-white border border-slate-300 text-slate-800 px-4 py-3 rounded-xl focus:ring-2 focus:ring-rikshaYellow focus:border-transparent outline-none transition font-medium">
+                            <!-- Populated dynamically -->
+                        </select>
+                    </div>
+
+                    <div class="p-4 bg-amber-50 rounded-2xl border border-amber-200">
+                        <div class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-info text-amber-600 mt-1"></i>
+                            <p class="text-xs text-amber-800 leading-relaxed">
+                                Rates shown are approximations including driver allowance, toll charges (if any), and our default 5% discount. Late-night packages might differ slightly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white p-8 rounded-2xl border border-slate-800 flex flex-col justify-between h-full min-h-[300px] shadow-inner text-center">
+                    <div>
+                        <span class="bg-rikshaYellow/15 border border-rikshaYellow/30 text-rikshaYellow text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                            Transparent Estimator
+                        </span>
+                        <div class="mt-6">
+                            <h4 class="text-slate-400 text-sm font-semibold uppercase tracking-wider" data-i18n="estFareTitle">Estimated Fare:</h4>
+                            <div class="text-5xl font-black text-white mt-2 flex items-center justify-center">
+                                <span class="text-amber-400 mr-1">₹</span>
+                                <span id="fare-display">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div id="estimate-tag" class="text-xs text-slate-400">
+                            Please select pickup and drop points to view estimated pricing.
+                        </div>
+                        <div class="text-xs text-rikshaYellow font-semibold" data-i18n="promoApplied">
+                            Includes 5% online booking discount!
+                        </div>
+                        <button onclick="bookThisTrip()" class="w-full bg-rikshaYellow hover:bg-amber-400 text-slate-950 font-extrabold py-3 px-4 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-check-double"></i> Book This Est. Trip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Tour Guide & Trip Planner Section -->
+    <section id="ai-guide-section" class="py-16 bg-slate-50 border-t border-b border-slate-200 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-1 text-amber-600 animate-pulse"></i> Smart Travel Assistant
+                </span>
+                <h2 class="text-3xl font-extrabold text-slate-950 font-yatra" data-i18n="aiGuideTitle">AI Botad Tour Guide & Trip Planner</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base" data-i18n="aiGuideSub">Powered by Gemini AI. Ask anything about Botad temples, sightseeing, timings, or local food.</p>
+                <div class="w-16 h-1 bg-rikshaYellow mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white rounded-3xl overflow-hidden shadow-2xl border border-slate-700">
+                <div class="p-6 sm:p-8 border-b border-slate-800 min-h-[180px] flex flex-col justify-between relative bg-slate-900/40">
+                    
+                    <div id="ai-empty-state" class="text-center py-6 space-y-4">
+                        <div class="mx-auto w-16 h-16 bg-amber-500/10 text-rikshaYellow rounded-full flex items-center justify-center text-3xl border border-amber-500/20">
+                            <i class="fa-solid fa-compass text-amber-400"></i>
+                        </div>
+                        <p class="text-slate-400 text-xs sm:text-sm max-w-md mx-auto">
+                            Need an itinerary? Not sure what time the Sarangpur temple Aarati is? Ask our verified AI travel assistant right now.
+                        </p>
+                    </div>
+
+                    <div id="ai-loading-state" class="hidden text-center py-8 space-y-4">
+                        <div class="flex justify-center items-center gap-2">
+                            <span class="w-3 h-3 bg-rikshaYellow rounded-full animate-bounce" style="animation-delay: 0.1s"></span>
+                            <span class="w-3 h-3 bg-amber-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                            <span class="w-3 h-3 bg-amber-600 rounded-full animate-bounce" style="animation-delay: 0.3s"></span>
+                        </div>
+                        <p class="text-xs text-amber-400 font-bold" data-i18n="aiThinking">AI Guide is researching Botad & planning your trip...</p>
+                    </div>
+
+                    <div id="ai-response-container" class="hidden prose prose-invert max-w-none text-left space-y-2">
+                        <!-- Dynamic AI response content -->
+                    </div>
+
+                    <div id="ai-sources-panel" class="hidden">
+                        <!-- Dynamic citations -->
+                    </div>
+
+                    <div id="ai-booking-action" class="hidden mt-6 pt-4 border-t border-slate-800/80 flex justify-end">
+                        <button onclick="copyAiPlanToForm()" class="bg-rikshaYellow hover:bg-amber-400 text-slate-950 font-extrabold px-5 py-3 rounded-xl shadow-lg hover:shadow-rikshaYellow/10 transition-all duration-300 flex items-center gap-2 text-xs sm:text-sm">
+                            <i class="fa-solid fa-paste"></i>
+                            <span data-i18n="bookAiPlan">Copy AI Itinerary to Booking Form</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-950/80 space-y-6">
+                    <div>
+                        <p class="text-[11px] text-slate-500 font-bold uppercase tracking-wider mb-2">Quick Suggested Questions:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="setAiQuery('quickPrompt1')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-amber-400/50 rounded-full px-4 py-2 text-xs font-semibold transition flex items-center gap-1.5" data-i18n="quickPrompt1">
+                                ☀️ 1-Day Spiritual Tour Itinerary
+                            </button>
+                            <button onclick="setAiQuery('quickPrompt2')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-amber-400/50 rounded-full px-4 py-2 text-xs font-semibold transition flex items-center gap-1.5" data-i18n="quickPrompt2">
+                                🍲 Famous Foods in Botad to Try
+                            </button>
+                            <button onclick="setAiQuery('quickPrompt3')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-amber-400/50 rounded-full px-4 py-2 text-xs font-semibold transition flex items-center gap-1.5" data-i18n="quickPrompt3">
+                                ⏰ Salangpur Mandir Timings & Info
+                            </button>
+                            <button onclick="setAiQuery('quickPrompt4')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-amber-400/50 rounded-full px-4 py-2 text-xs font-semibold transition flex items-center gap-1.5" data-i18n="quickPrompt4">
+                                🚗 Best sights to see inside Botad city
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <div class="relative flex-1">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400 text-sm">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                            <input type="text" id="ai-user-query" class="w-full bg-slate-900 border border-slate-700 rounded-xl py-3.5 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:border-transparent outline-none transition text-slate-200 font-medium text-sm" placeholder="Ask AI travel guide...">
+                        </div>
+                        <button onclick="submitAiQuery()" class="bg-rikshaYellow hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span data-i18n="aiBtn">Ask AI Guide</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hanumanji Package Banner -->
+    <section class="py-12 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-yellow-400 rounded-full opacity-25 blur-xl"></div>
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+            <div class="space-y-4 text-center md:text-left">
+                <span class="bg-white/90 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Most Popular Choice
+                </span>
+                <h3 class="text-3xl font-extrabold tracking-tight font-yatra">सालंगपुर कष्टभंजन देव दर्शन पैकेज (Salangpur Hanumanji Tour)</h3>
+                <p class="text-slate-900 font-medium max-w-2xl text-sm sm:text-base leading-relaxed">
+                    Have a smooth and beautiful darshan with our dedicated round-trip service. We wait for you during Darshan, help you with luggage, and safely drop you back to Botad Junction!
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 text-xs font-bold text-slate-900">
+                    <span><i class="fa-solid fa-circle-check"></i> Free Waiting Time</span>
+                    <span><i class="fa-solid fa-circle-check"></i> Luggage Safe Inside</span>
+                    <span><i class="fa-solid fa-circle-check"></i> Honest Native Drivers</span>
+                </div>
+            </div>
+            
+            <div class="shrink-0">
+                <button onclick="quickSarangpurPackage()" class="bg-slate-950 text-white font-extrabold px-8 py-4 rounded-2xl hover:bg-slate-900 transition shadow-xl inline-flex items-center gap-2 transform hover:scale-105 duration-200">
+                    <i class="fa-solid fa-gopuram text-rikshaYellow"></i> Book Hanumanji Package
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking-section" class="py-16 bg-slate-100 border-t border-slate-200 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-950 font-yatra" data-i18n="bookingFormTitle">Quick WhatsApp Booking</h2>
+                <p class="text-slate-600 mt-2" data-i18n="bookingSub">Fill details to generate direct booking chat</p>
+                <div class="w-16 h-1 bg-rikshaYellow mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-slate-200">
+                <form onsubmit="generateWhatsAppMessage(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="yourName">Your Name</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+                                <input type="text" id="booking-name" required class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:bg-white focus:border-transparent outline-none transition text-slate-800 font-medium" placeholder="Name">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="passengers">Number of Passengers</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+                                <select id="booking-passengers" class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:bg-white focus:border-transparent outline-none transition text-slate-800 font-medium">
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers (Max Comfortable Riksha Limit)</option>
+                                    <option value="More than 4">More than 4 (Requires multiple rides)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="pickupLabel">Pickup Location</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                    <i class="fa-solid fa-location-dot text-amber-500"></i>
+                                </span>
+                                <input type="text" id="booking-pickup" required class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:bg-white focus:border-transparent outline-none transition text-slate-800 font-medium" placeholder="Where do we pick you up in Botad?">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="dropLabel">Destination Location</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                    <i class="fa-solid fa-location-arrow text-emerald-500"></i>
+                                </span>
+                                <input type="text" id="booking-drop" required class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:bg-white focus:border-transparent outline-none transition text-slate-800 font-medium" placeholder="Where do you want to go?">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="rideDate">Journey Date</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                </span>
+                                <input type="date" id="booking-date" required class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:bg-white focus:border-transparent outline-none transition text-slate-800 font-medium">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="rideTime">Journey Time</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                                    <i class="fa-solid fa-clock"></i>
+                                </span>
+                                <input type="time" id="booking-time" required class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:bg-white focus:border-transparent outline-none transition text-slate-800 font-medium">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-slate-800 mb-2" data-i18n="remarks">Special Instructions / Luggage details</label>
+                        <div class="relative">
+                            <span class="absolute top-3.5 left-0 flex items-start pl-4 text-slate-400">
+                                <i class="fa-solid fa-pen"></i>
+                            </span>
+                            <textarea id="booking-remarks" rows="3" class="w-full bg-slate-50 border border-slate-300 rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-rikshaYellow focus:bg-white focus:border-transparent outline-none transition text-slate-800 font-medium" placeholder="E.g., Heavy luggage, senior citizens, wait time required etc."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-rikshaGreen hover:bg-green-700 text-white font-extrabold py-4 px-6 rounded-2xl shadow-xl transition-all duration-300 flex items-center justify-center gap-3 text-lg transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span data-i18n="sendBooking">Confirm Booking on WhatsApp</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Showcase -->
+    <section class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-slate-950 font-yatra">Fleet & Comfort Standard</h2>
+                <p class="text-slate-600 mt-2">Take a virtual tour inside our standard high-quality tourist auto</p>
+                <div class="w-16 h-1 bg-rikshaYellow mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="text-rikshaYellow text-3xl mb-4">
+                        <i class="fa-solid fa-couch"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-950 text-lg">Premium Wide Cushions</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Say goodbye to back-pains! Our auto has customized extra padding soft-foam seats that comfortably support long temple packages up to Gadhada Swaminarayan or Paliyad.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="text-amber-500 text-3xl mb-4">
+                        <i class="fa-solid fa-wind"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-950 text-lg">Dust & Sun Protection</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Equipped with high-quality retractable transparent roll-down covers to shield you from the bright Gujarat sun, dust storms, or light seasonal rainfall.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="text-rikshaGreen text-3xl mb-4">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-950 text-lg">Pleasant Music & Charger</h3>
+                    <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                        Listen to beautiful Gujarati Bhajans, Hindi songs, or Hanuman Chalisa of your choice. Keep your smartphone fueled up during trips with our high-speed dynamic 12V charger.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs & Testimonials -->
+    <section class="py-16 bg-slate-50 border-t border-b border-slate-200 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-extrabold text-slate-950 font-yatra mb-8" data-i18n="faqTitle">Frequently Asked Questions</h3>
+                <div class="space-y-4" id="faq-accordion-container">
+                    <div class="border border-slate-200 rounded-xl bg-white overflow-hidden transition duration-300 shadow-sm">
+                        <button class="w-full text-left p-5 font-bold text-slate-800 flex justify-between items-center outline-none faq-btn">
+                            <span>How do I book a ride to Sarangpur Hanuman Temple?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-200 text-slate-400"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 faq-panel bg-slate-50">
+                            <p class="p-5 text-sm text-slate-600 leading-relaxed">
+                                You can use our quick booking form above, choose "Salangpur Kashtabhanjan Dev Temple" in the destinations list, click booking, and send the generated WhatsApp message. Sumit-bhai will promptly reply and secure your trip.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-xl bg-white overflow-hidden transition duration-300 shadow-sm">
+                        <button class="w-full text-left p-5 font-bold text-slate-800 flex justify-between items-center outline-none faq-btn">
+                            <span>Are there separate waiting charges during temple darshans?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-200 text-slate-400"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 faq-panel bg-slate-50">
+                            <p class="p-5 text-sm text-slate-600 leading-relaxed">
+                                No! For our specialized temple return packages, standard waiting time (up to 2 hours for darshan and prasad) is completely integrated into the estimated package pricing. No extra hidden costs!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-xl bg-white overflow-hidden transition duration-300 shadow-sm">
+                        <button class="w-full text-left p-5 font-bold text-slate-800 flex justify-between items-center outline-none faq-btn">
+                            <span>How many passengers can comfortably sit in your Auto?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform duration-200 text-slate-400"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 faq-panel bg-slate-50">
+                            <p class="p-5 text-sm text-slate-600 leading-relaxed">
+                                Our Auto Rickshaw comfortably accommodates up to 3 to 4 adult passengers with normal-sized luggage. For larger family groups, we can coordinate and bring dual auto rikshas at discounted package prices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-extrabold text-slate-950 font-yatra mb-8" data-i18n="testimonialsTitle">What Our Customers Say</h3>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative">
+                        <span class="absolute right-6 top-6 text-rikshaYellow/30 text-6xl font-serif">“</span>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 bg-rikshaYellow text-slate-950 font-bold rounded-full flex items-center justify-center text-sm uppercase">
+                                HP
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Harsh Patel</h4>
+                                <p class="text-xs text-slate-400">Visitor from Ahmedabad</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            "We took Sumit-bhai's auto from Botad Junction to Salangpur Temple. Truly a wonderful experience! The auto was extremely clean, he played pleasant Hanuman Bhajans, and charged exactly what was promised. Fully recommend!"
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative">
+                        <span class="absolute right-6 top-6 text-rikshaYellow/30 text-6xl font-serif">“</span>
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-10 h-10 bg-emerald-500 text-white font-bold rounded-full flex items-center justify-center text-sm uppercase">
+                                RJ
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Rajesh Joshi</h4>
+                                <p class="text-xs text-slate-400">Botad Local Resident</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            "लो मिडिल क्लास फैमिली रिक्शा सचमुच नाम की तरह हमारे लिए बहुत ही फायदेमंद है। सुमित भाई का व्यवहार बहुत ही विनम्र और पारिवारिक है। मैं अपने बच्चों को स्कूल-अस्पताल भेजने के लिए हमेशा इन्हीं की ऑटो बुक करता हूं।"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts section -->
+    <section class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto bg-gradient-to-tr from-slate-900 to-slate-800 text-white rounded-3xl overflow-hidden shadow-2xl border border-slate-700">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-8 sm:p-12 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs text-rikshaYellow font-bold tracking-widest uppercase block mb-2" data-i18n="contactUs">
+                            Contact Information
+                        </span>
+                        <h3 class="text-3xl font-extrabold text-white font-yatra tracking-tight">Lo Middle Class Family</h3>
+                        <p class="text-slate-400 text-xs mt-1">Get in touch directly with our main operator for special bookings, corporate requirements or queries.</p>
+                    </div>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-slate-800 text-rikshaYellow rounded-xl flex items-center justify-center text-lg shadow-inner">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold">Call / Phone Number</p>
+                                <a href="tel:+917778867800" class="text-lg font-bold hover:text-rikshaYellow transition">7778867800</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-slate-800 text-rikshaGreen rounded-xl flex items-center justify-center text-lg shadow-inner">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold">WhatsApp Booking</p>
+                                <a href="https://wa.me/917778867800" target="_blank" class="text-lg font-bold hover:text-rikshaGreen transition">7778867800</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-slate-800 text-indigo-400 rounded-xl flex items-center justify-center text-lg shadow-inner">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold">Email Address</p>
+                                <a href="mailto:sathaliyasumit303@gmail.com" class="text-sm sm:text-base font-medium hover:text-indigo-400 transition">sathaliyasumit303@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-slate-800 text-rose-400 rounded-xl flex items-center justify-center text-lg shadow-inner">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold" data-i18n="address">Botad, Gujarat, India</p>
+                                <p class="text-sm font-semibold">Botad, Gujarat, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-[11px] text-slate-500 pt-4 border-t border-slate-800">
+                        *Operational all days of the week, including Sundays & Public Holidays. Standard operational timings 5:00 AM to 11:30 PM. Emergency drops active 24/7.
+                    </p>
+                </div>
+
+                <div class="relative bg-slate-800 min-h-[300px] flex items-center justify-center border-l border-slate-700">
+                    <div class="absolute inset-0 bg-slate-900 flex flex-col justify-between p-8 text-center">
+                        <div class="mx-auto w-16 h-16 bg-rikshaYellow/10 text-rikshaYellow rounded-full flex items-center justify-center text-2xl mb-4 border border-rikshaYellow/20">
+                            <i class="fa-solid fa-earth-asia"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-lg">Botad & Surrounding Regions Map</h4>
+                            <p class="text-xs text-slate-400 mt-2 px-4">
+                                Our service coverage includes the entire Botad municipality, Paliyad highway, Gadhada taluka road, and the Salangpur temple route.
+                            </p>
+                        </div>
+                        <div class="bg-slate-800/80 rounded-2xl p-4 border border-slate-700/60 text-xs text-slate-300">
+                            <span class="font-bold text-rikshaYellow block mb-1">📍 Main Stand:</span>
+                            Botad Junction Railway Station, Botad, Gujarat - 364710
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-900">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <h4 class="text-lg font-bold text-white font-yatra tracking-wide">Lo Middle Class Family</h4>
+                <p class="text-xs text-slate-500 mt-1" data-i18n="footerCopy">© 2026 Lo Middle Class Family - Auto Riksha Tourist Service. Crafted with love for Botad Pilgrims.</p>
+            </div>
+            
+            <div class="flex items-center space-x-4 text-xl">
+                <a href="tel:+917778867800" class="hover:text-rikshaYellow transition"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/917778867800" target="_blank" class="hover:text-rikshaGreen transition"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:sathaliyasumit303@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Quick-Action Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 shadow-xl z-50 p-3 grid grid-cols-2 gap-3">
+        <a href="tel:+917778867800" class="bg-slate-900 hover:bg-slate-800 text-white font-extrabold py-3 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone text-rikshaYellow"></i> Call Driver
+        </a>
+        <a href="https://wa.me/917778867800?text=Hello%20Sumit-bhai,%20I%20want%20to%20book%20a%20ride%20with%20Lo%20Middle%20Class%20Auto%20Riksha%20Service." target="_blank" class="bg-rikshaGreen hover:bg-green-700 text-white font-extrabold py-3 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Book
+        </a>
+    </div>
+
+    <!-- Extra Spacer for Mobile to avoid content overlap with sticky bottom bar -->
+    <div class="h-20 md:hidden bg-slate-950"></div>
+
+    <!-- Notification Toaster -->
+    <div id="toast-notification" class="fixed top-24 right-4 bg-slate-900 text-white px-6 py-4 rounded-2xl border border-slate-700 shadow-2xl z-[9999] max-w-sm pointer-events-none transform translate-y-10 opacity-0 transition-all duration-300 flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-full bg-rikshaYellow/10 text-rikshaYellow flex items-center justify-center text-base">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+        <p class="text-xs font-semibold" id="toast-text"></p>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                brand: "Lo Middle Class Family",
+                subtitle: "Auto Riksha Tourist Service - Botad",
+                tagline: "Safe, Comfortable & Affordable Rides in Botad",
+                heroTitle: "Explore Botad City & Famous Temples Safely",
+                heroDesc: "Your trusted travel partner for Botad Station, Bus Stand, Salangpur Hanumanji Temple, Gadhada Swaminarayan, and local rides.",
+                bookNow: "Book Your Ride Now",
+                estimateFare: "Estimate Fare",
+                aboutUs: "About Us",
+                aboutText: "We provide highly reliable, friendly, and economical Auto Riksha services in Botad, Gujarat. Specially managed to cater to middle-class families, tourists, and pilgrims seeking peaceful transport with zero hassle.",
+                ourServices: "Our Specialized Services",
+                servicesDesc: "Affordable solutions designed for your comfort and budget",
+                specialOffer: "Special Festival Discount",
+                discountText: "Flat 5% OFF on booking your Salangpur Dev or Gadhada Dham round trips!",
+                calculatorTitle: "Smart Fare Estimator",
+                calcSub: "Check approximate transparent rates before booking. (5% Off Included)",
+                pickupLabel: "Select Pickup Location",
+                dropLabel: "Select Destination Location",
+                calculateBtn: "Calculate Estimated Fare",
+                estFareTitle: "Estimated Fare:",
+                promoApplied: "Includes 5% online booking discount!",
+                bookingFormTitle: "Quick WhatsApp Booking",
+                bookingSub: "Fill details to generate direct booking chat",
+                yourName: "Your Name",
+                phName: "Enter your name",
+                passengers: "Number of Passengers",
+                rideDate: "Journey Date",
+                rideTime: "Journey Time",
+                remarks: "Special Instructions / Luggage details",
+                sendBooking: "Confirm Booking on WhatsApp",
+                whyUs: "Why Choose Us?",
+                whyReason1: "Local Tour Guide & Safe Drivers",
+                whyReason2: "Punctual & Fixed Pricing",
+                whyReason3: "Clean & Sanitized Auto",
+                whyReason4: "Sarangpur & Gadhada Expert",
+                whyDesc1: "We don't just drive, we show you the best historical sights around Botad.",
+                whyDesc2: "No bargaining issues, honest transparent fare estimate every time.",
+                whyDesc3: "Your health is priority. Well-maintained spacious Riksha with safety kit.",
+                whyDesc4: "Comfortable spiritual journey with perfect timing for Aarti & Darshan.",
+                faqTitle: "Frequently Asked Questions",
+                testimonialsTitle: "What Our Customers Say",
+                callNow: "Call Sumit-bhai",
+                address: "Botad, Gujarat, India",
+                footerCopy: "© 2026 Lo Middle Class Family - Auto Riksha Tourist Service. Crafted with love for Botad Pilgrims.",
+                contactUs: "Contact Information",
+                hospitalDrop: "Hospital Pickup & Drop",
+                railwayDrop: "Railway Station Service",
+                busDrop: "Bus Stand Service",
+                sightseeing: "Local Sightseeing Packages",
+                hotelDrop: "Hotel & Guest House Drops",
+                familyTour: "Family Temple Packages",
+                tourPlan: "Custom Sightseeing Tours",
+                aiGuideTitle: "AI Botad Tour Guide & Trip Planner",
+                aiGuideSub: "Powered by Gemini AI. Ask anything about Botad temples, sightseeing, timings, or local food.",
+                aiPlaceholder: "Ask AI, e.g., 'Make a 1-day family tour itinerary for Gadhada and Salangpur...'",
+                aiBtn: "Ask AI Guide",
+                quickPrompt1: "☀️ 1-Day Spiritual Tour Itinerary",
+                quickPrompt2: "🍲 Famous Foods in Botad to Try",
+                quickPrompt3: "⏰ Salangpur Mandir Timings & Info",
+                quickPrompt4: "🚗 Best sights to see inside Botad city",
+                bookAiPlan: "Copy AI Itinerary to Booking Form",
+                aiThinking: "AI Guide is researching Botad & planning your trip..."
+            },
+            hi: {
+                brand: "लो मिडिल क्लास फैमिली",
+                subtitle: "ऑटो रिक्शा टूरिस्ट सर्विस - बोताद",
+                tagline: "बोताद में सुरक्षित, आरामदायक और किफायती सवारी",
+                heroTitle: "बोताद शहर और प्रसिद्ध मंदिरों की सुरक्षित यात्रा करें",
+                heroDesc: "बोताद जंक्शन, बस स्टैंड, सालंगपुर कष्टभंजन देव हनुमानजी मंदिर, गढडा स्वामीनारायण मंदिर और स्थानीय भ्रमण के लिए आपका भरोसेमंद साथी।",
+                bookNow: "अभी सवारी बुक करें",
+                estimateFare: "किराए का अनुमान लगाएं",
+                aboutUs: "हमारे बारे में",
+                aboutText: "हम बोताद, गुजरात में अत्यधिक विश्वसनीय, मित्रवत और किफायती ऑटो रिक्शा सेवाएं प्रदान करते हैं। विशेष रूप से मध्यम वर्गीय परिवारों, पर्यटकों और तीर्थयात्रियों के लिए डिज़ाइन किया गया है जो बिना किसी परेशानी के सुखद यात्रा चाहते हैं।",
+                ourServices: "हमारी विशेष सेवाएं",
+                servicesDesc: "आपकी सुविधा और बजट के लिए बनाई गई सर्वोत्तम सेवाएं",
+                specialOffer: "विशेष उत्सव ऑफर",
+                discountText: "सालंगपुर धाम या गढडा धाम राउंड ट्रिप की बुकिंग पर फ्लैट 5% की छूट!",
+                calculatorTitle: "स्मार्ट किराया कैलकुलेटर",
+                calcSub: "बुकिंग से पहले पारदर्शी और सटीक अनुमानित दरों की जांच करें (5% छूट शामिल)।",
+                pickupLabel: "पिकअप का स्थान चुनें",
+                dropLabel: "गंतव्य का स्थान चुनें",
+                calculateBtn: "अनुमानित किराए की गणना करें",
+                estFareTitle: "अनुमानित किराया:",
+                promoApplied: "5% ऑनलाइन बुकिंग छूट शामिल है!",
+                bookingFormTitle: "त्वरित व्हाट्सएप बुकिंग",
+                bookingSub: "सीधे व्हाट्सएप चैट बुकिंग संदेश उत्पन्न करने के लिए विवरण भरें",
+                yourName: "आपका नाम",
+                phName: "अपना नाम दर्ज करें",
+                passengers: "यात्रियों की संख्या",
+                rideDate: "यात्रा की तिथि",
+                rideTime: "यात्रा का समय",
+                remarks: "विशेष निर्देश / सामान का विवरण",
+                sendBooking: "व्हाट्सएप पर बुकिंग की पुष्टि करें",
+                whyUs: "हमें क्यों चुनें?",
+                whyReason1: "स्थानीय गाइड और सुरक्षित ड्राइवर",
+                whyReason2: "समय के पाबंद और निश्चित मूल्य",
+                whyReason3: "स्वच्छ और सैनिटाइज्ड ऑटो",
+                whyReason4: "सारंगपुर और गढडा यात्रा विशेषज्ञ",
+                whyDesc1: "हम केवल ड्राइव नहीं करते, हम आपको बोताद के आसपास के सर्वोत्तम स्थल दिखाते हैं।",
+                whyDesc2: "कोई मोलतोल का झंझट नहीं, हर बार ईमानदार पारदर्शी किराया अनुमान।",
+                whyDesc3: "आपका स्वास्थ्य हमारी प्राथमिकता है। सुरक्षा किट के साथ सुसज्जित विशाल रिक्शा।",
+                whyDesc4: "आरती और दर्शन के सही समय के साथ आरामदायक आध्यात्मिक यात्रा का अनुभव।",
+                faqTitle: "अक्सर पूछे जाने वाले प्रश्न",
+                testimonialsTitle: "हमारे ग्राहकों की प्रतिक्रिया",
+                callNow: "सुमित भाई को कॉल करें",
+                address: "बोताद, गुजरात, भारत",
+                footerCopy: "© 2026 लो मिडिल क्लास फैमिली - ऑटो रिक्शा टूरिस्ट सर्विस। बोताद तीर्थयात्रियों के लिए प्यार से निर्मित।",
+                contactUs: "सम्पर्क करने का विवरण",
+                hospitalDrop: "अस्पताल पिकअप और ड्रॉप",
+                railwayDrop: "रेलवे स्टेशन पिकअप और ड्रॉप",
+                busDrop: "बस स्टैंड पिकअप और ड्रॉप",
+                sightseeing: "स्थानीय दर्शनीय स्थल पैकेज",
+                hotelDrop: "होटल और गेस्ट हाउस ट्रांसपोर्ट",
+                familyTour: "पारिवारिक मंदिर यात्राएं",
+                tourPlan: "कस्टम टूर प्लान",
+                aiGuideTitle: "AI बोताद यात्रा मार्गदर्शक और ट्रिप प्लानर",
+                aiGuideSub: "जेमिनी AI द्वारा संचालित। बोताद के मंदिरों, दर्शन समय, पर्यटन स्थलों या स्थानीय भोजन के बारे में कुछ भी पूछें।",
+                aiPlaceholder: "AI से पूछें, जैसे: 'गढ़डा और सालंगपुर के लिए 1-दिवसीय पारिवारिक यात्रा कार्यक्रम बनाएं...'",
+                aiBtn: "AI गाइड से पूछें",
+                quickPrompt1: "☀️ 1-दिवसीय आध्यात्मिक यात्रा योजना",
+                quickPrompt2: "🍲 बोताद के प्रसिद्ध स्वादिष्ट भोजन",
+                quickPrompt3: "⏰ सालंगपुर मंदिर का समय और जानकारी",
+                quickPrompt4: "🚗 बोताद शहर के अंदर घूमने के बेहतरीन स्थल",
+                bookAiPlan: "AI यात्रा योजना को बुकिंग फॉर्म में कॉपी करें",
+                aiThinking: "AI गाइड बोताद के बारे में खोज कर रहा है और आपकी योजना बना रहा है..."
+            },
+            gu: {
+                brand: "લો મિડલ ક્લાસ ફેમિલી",
+                subtitle: "ઓટો રિક્ષા ટૂરિસ્ટ સર્વિસ - બોટાદ",
+                tagline: "બોટાદમાં સૂરક્ષિત, આરામદાયક અને સસ્તી સવારી",
+                heroTitle: "બોટાદ સિટી અને ભવ્ય મંદિરોની આરામદાયક મુસાફરી કરો",
+                heroDesc: "બોટાદ જંક્શન, બસ સ્ટેન્ડ, સાળંગપુર કષ્ટભંજન દેવ હનુમાનજી મંદિર, ગઢડા સ્વામિનારાયણ મંદિર અને લોકલ સાઈટસીઈંગ માટે તમારા હરહંમેશ સાથી.",
+                bookNow: "અત્યારે જ બુક કરો",
+                estimateFare: "ભાડાનું અનુમાન કરો",
+                aboutUs: "અમારા વિશે",
+                aboutText: "અમે બોટાદ, ગુજરાતમાં અત્યંત વિશ્વસનીય, નમ્ર અને આર્થિક ઓટો રિક્ષા સેવાઓ પ્રદાન કરીએ છીએ. ખાસ કરીને મધ્યમ વર્ગના પરિવારો, પ્રવાસીઓ અને યાત્રાળુઓ માટે આયોજિત જેઓ શાંતિપૂર્ણ મુસાફરી ઇચ્છે છે.",
+                ourServices: "અમારી ખાસ સેવાઓ",
+                servicesDesc: "તમારી સુવિધા અને બજેટને ધ્યાનમાં રાખીને બનાવેલ સેવાઓ",
+                specialOffer: "ખાસ ઉત્સવ ઓફર",
+                discountText: "સાળંગપુર ધામ અથવા ગઢડા ધામની રાઉન્ડ ટ્રીપ બુકિંગ પર ફ્લેટ 5% ડિસ્કાઉન્ટ!",
+                calculatorTitle: "સ્માર્ટ ભાડું કેલ્ક્યુલેટર",
+                calcSub: "બુકિંગ કરતા પહેલા અંદાજિત પારદર્શક દરો તપાસો (5% ડિસ્કાઉન્ટ સાથે).",
+                pickupLabel: "પિકઅપ સરનામું પસંદ કરો",
+                dropLabel: "ગંતવ્ય સરનામું પસંદ કરો",
+                calculateBtn: "અંદાજિત ભાડાની ગણતરી કરો",
+                estFareTitle: "અંદાજિત ભાડું:",
+                promoApplied: "ઓનલાઇન બુકિંગ પર 5% ડિસ્કાઉન્ટ ઉમેરેલ છે!",
+                bookingFormTitle: "ઝડપી વોટ્સએપ બુકિંગ",
+                bookingSub: "ડાયરેક્ટ વોટ્સએપ ચેટ બુકિંગ માટે નીચેની માહિતી ભરો",
+                yourName: "તમારું નામ",
+                phName: "તમારું નામ લખો",
+                passengers: "પેસેન્જરની સંખ્યા",
+                rideDate: "મુસાફરીની તારીખ",
+                rideTime: "મુસાફરીનો સમય",
+                remarks: "ખાસ સૂચના / સામાન વિગત",
+                sendBooking: "વોટ્સએપ પર બુકિંગ કન્ફર્મ કરો",
+                whyUs: "શા માટે અમને પસંદ કરો?",
+                whyReason1: "લોકલ ગાઇડ અને સુરક્ષિત ડ્રાઇવિંગ",
+                whyReason2: "સમયસર અને ફિક્સ પ્રાઈસિંગ",
+                whyReason3: "સ્વચ્છ અને સેનિટાઈઝ્ડ ઓટો",
+                whyReason4: "સાળંગપુર અને ગઢડા યાત્રા સ્પેશિયાલિસ્ટ",
+                whyDesc1: "અમે ફક્ત ડ્રાઇવ નથી કરતા, અમે તમને બોટાદની આસપાસના શ્રેષ્ઠ સ્થળોની મુલાકાત કરાવીએ છીએ.",
+                whyDesc2: "કોઈ રકઝક વગર, હંમેશા પ્રમાણિક અને પારદર્શક ભાડાનું અંદાજ પત્રક.",
+                whyDesc3: "તમારું સ્વાસ્થ્ય અમારી પ્રાથમિકતા છે. સેનિટાઈઝ્ડ અને ખુલ્લી હવાવાળી રિક્ષા.",
+                whyDesc4: "આરતી અને દર્શનના યોગ્ય સમય સાથે ભક્તિમય અને સંતોષકારક યાત્રાનો અનુભવ.",
+                faqTitle: "વારંવાર પૂછાતા પ્રશ્નો",
+                testimonialsTitle: "ગ્રાહકોનો અવાજ",
+                callNow: "સુમિત-ભાઈને ફોન કરો",
+                address: "બોટાદ, ગુજરાત, ભારત",
+                footerCopy: "© 2026 લો મિડલ ક્લાસ ફેમિલી - ઓટો રિક્ષા ટૂરિસ્ટ સર્વિસ. બોટાદના યાત્રાળુઓ માટે પ્રેમપૂર્વક બનાવેલ.",
+                contactUs: "સંપર્ક માહિતી",
+                hospitalDrop: "હોસ્પિટલ પિકઅપ અને ડ્રોપ",
+                railwayDrop: "રેલવે સ્ટેશન પિકઅપ અને ડ્રોપ",
+                busDrop: "બસ સ્ટેન્ડ પિકઅપ અને ડ્રોપ",
+                sightseeing: "સ્થાનિક જોવાલાયક સ્થળોના પેકેજો",
+                hotelDrop: "હોટેલ અને ગેસ્ટ હાઉસ ડ્રોપ્સ",
+                familyTour: "કૌટુંબિક મંદિર પ્રવાસ પેકેજ",
+                tourPlan: "કસ્ટમ ટૂર પ્લાન",
+                aiGuideTitle: "AI બોટાદ પ્રવાસ માર્ગદર્શક અને ટ્રીપ પ્લાનર",
+                aiGuideSub: "જેમિની AI દ્વારા સંચાલિત. બોટાદના મંદિરો, દર્શન સમય, જોવાલાયક સ્થળો અથવા સ્થાનિક વાનગીઓ વિશે કંઈપણ પૂછો.",
+                aiPlaceholder: "AI ને પૂછો, જેમ કે: 'ગઢડા અને સાળંગપુર માટે 1-દિવસીય કૌટુંબિક પ્રવાસનું આયોજન કરો...'",
+                aiBtn: "AI ગાઇડને પૂછો",
+                quickPrompt1: "☀️ 1-દિવસીય આધ્યાત્મિક પ્રવાસ આયોજન",
+                quickPrompt2: "🍲 બોટાદની પ્રખ્યાત વાનગીઓ",
+                quickPrompt3: "⏰ સાળંગપુર મંદિરનો સમય અને માહિતી",
+                quickPrompt4: "🚗 બોટાદ લોકલ સિટી પ્રવાસ",
+                bookAiPlan: "AI પ્રવાસ યોજના બુકિંગ ફોર્મમાં કોપી કરો",
+                aiThinking: "AI ગાઇડ બોટાદ વિશે રિસર્ચ કરી રહ્યો છે અને પ્લાનિંગ કરી રહ્યો છે..."
+            }
+        };
+
+        let currentLang = 'hi';
+
+        const locationKeys = ['railway', 'bus', 'salangpur', 'gadhada', 'paliyad', 'local'];
+        const locations = {
+            en: {
+                railway: "Botad Junction Railway Station 🚂",
+                bus: "Botad Central Bus Stand 🚌",
+                salangpur: "Sarangpur Hanumanji Temple 🛕",
+                gadhada: "Gadhada Swaminarayan Mandir 🛕",
+                paliyad: "Paliyad Temple Dham 🛕",
+                local: "Botad Local City / Market 🛍️"
+            },
+            hi: {
+                railway: "बोताद जंक्शन रेलवे स्टेशन 🚂",
+                bus: "बोताद सेंट्रल बस स्टैंड 🚌",
+                salangpur: "सालंगपुर कष्टभंजन हनुमान मंदिर 🛕",
+                gadhada: "गढडा स्वामीनारायण मंदिर 🛕",
+                paliyad: "पालियाद धाम मंदिर 🛕",
+                local: "बोताद लोकल सिटी / मार्केट 🛍️"
+            },
+            gu: {
+                railway: "બોટાદ જંક્શન રેલવે સ્ટેશન 🚂",
+                bus: "બોટાદ સેન્ટ્રલ બસ સ્ટેન્ડ 🚌",
+                salangpur: "સાળંગપુર કષ્ટભંજન હનુમાનજી મંદિર 🛕",
+                gadhada: "ગઢડા સ્વામિનારાયણ મંદિર 🛕",
+                paliyad: "પાલિયાદ ધામ મંદિર 🛕",
+                local: "બોટાદ લોકલ સિટી / માર્કેટ 🛍️"
+            }
+        };
+
+        const baseFares = {
+            'railway_salangpur': 300,
+            'railway_gadhada': 450,
+            'railway_paliyad': 250,
+            'railway_local': 80,
+            'bus_salangpur': 280,
+            'bus_gadhada': 430,
+            'bus_paliyad': 240,
+            'bus_local': 70,
+            'salangpur_gadhada': 600,
+            'salangpur_paliyad': 500,
+            'salangpur_local': 280,
+            'gadhada_paliyad': 650,
+            'gadhada_local': 430,
+            'paliyad_local': 220
+        };
+
+        function updateDropdownOptions() {
+            const pickupSelect = document.getElementById('pickup-selector');
+            const dropSelect = document.getElementById('drop-selector');
+            if (!pickupSelect || !dropSelect) return;
+
+            const prevPickupVal = pickupSelect.value;
+            const prevDropVal = dropSelect.value;
+
+            pickupSelect.innerHTML = '';
+            dropSelect.innerHTML = '';
+
+            locationKeys.forEach(key => {
+                const label = locations[currentLang][key];
+                
+                const optPickup = document.createElement('option');
+                optPickup.value = key;
+                optPickup.textContent = label;
+                pickupSelect.appendChild(optPickup);
+
+                const optDrop = document.createElement('option');
+                optDrop.value = key;
+                optDrop.textContent = label;
+                dropSelect.appendChild(optDrop);
+            });
+
+            pickupSelect.value = prevPickupVal && locationKeys.includes(prevPickupVal) ? prevPickupVal : 'railway';
+            dropSelect.value = prevDropVal && locationKeys.includes(prevDropVal) ? prevDropVal : 'salangpur';
+
+            calculateFare();
+        }
+
+        function calculateFare() {
+            const pickupSelect = document.getElementById('pickup-selector');
+            const dropSelect = document.getElementById('drop-selector');
+            const fareDisplay = document.getElementById('fare-display');
+            const estimateTag = document.getElementById('estimate-tag');
+
+            if (!pickupSelect || !dropSelect || !fareDisplay || !estimateTag) return;
+
+            const pickup = pickupSelect.value;
+            const drop = dropSelect.value;
+
+            if (pickup === drop) {
+                fareDisplay.textContent = "0";
+                estimateTag.textContent = currentLang === 'gu' ? "કૃપા કરીને અલગ ડ્રોપ પોઇન્ટ પસંદ કરો." : 
+                                          currentLang === 'hi' ? "कृपया अलग गंतव्य स्थान चुनें।" : 
+                                          "Please select a different drop destination.";
+                return;
+            }
+
+            const key = [pickup, drop].sort().join('_');
+            const baseFare = baseFares[key] || 100;
+
+            const discountedFare = Math.round(baseFare * 0.95);
+            fareDisplay.textContent = discountedFare;
+
+            const pLabel = locations[currentLang][pickup];
+            const dLabel = locations[currentLang][drop];
+
+            if (currentLang === 'gu') {
+                estimateTag.textContent = `${pLabel} થી ${dLabel} સુધી અંદાજિત ભાડું (તમામ ટેક્સ સાથે)`;
+            } else if (currentLang === 'hi') {
+                estimateTag.textContent = `${pLabel} से ${dLabel} तक अनुमानित किराया (सभी टैक्स शामिल)`;
+            } else {
+                estimateTag.textContent = `Estimated discounted fare from ${pLabel} to ${dLabel}.`;
+            }
+        }
+
+        function bookThisTrip() {
+            const pickupSelect = document.getElementById('pickup-selector');
+            const dropSelect = document.getElementById('drop-selector');
+            const fareDisplay = document.getElementById('fare-display');
+
+            if (!pickupSelect || !dropSelect) return;
+
+            const pickupKey = pickupSelect.value;
+            const dropKey = dropSelect.value;
+            const estimatedFare = fareDisplay ? fareDisplay.textContent : "--";
+
+            const pickupText = locations[currentLang][pickupKey];
+            const dropText = locations[currentLang][dropKey];
+
+            const bookingPickupInput = document.getElementById('booking-pickup');
+            const bookingDropInput = document.getElementById('booking-drop');
+            const bookingRemarks = document.getElementById('booking-remarks');
+
+            if (bookingPickupInput && bookingDropInput) {
+                bookingPickupInput.value = pickupText;
+                bookingDropInput.value = dropText;
+                
+                if (bookingRemarks) {
+                    bookingRemarks.value = currentLang === 'gu' ? `અંદાજિત ભાડું: ₹${estimatedFare} (5% ડિસ્કાઉન્ટ શામેલ છે)` : 
+                                          currentLang === 'hi' ? `अनुमानित किराया: ₹${estimatedFare} (5% छूट शामिल है)` : 
+                                          `Estimated Fare: ₹${estimatedFare} (Includes 5% online booking discount)`;
+                }
+
+                document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+
+                const successMsg = currentLang === 'gu' ? "રૂટ અને ભાડું બુકિંગ ફોર્મમાં સેવ કરવામાં આવ્યું છે!" :
+                                   currentLang === 'hi' ? "मार्ग और किराया बुकिंग फॉर्म में दर्ज कर दिया गया है!" :
+                                   "Route and estimated fare pre-filled in the booking form!";
+                showCustomNotification(successMsg);
+            }
+        }
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('bg-rikshaYellow', 'text-slate-900', 'font-bold');
+                    btn.classList.remove('bg-white', 'text-slate-700');
+                } else {
+                    btn.classList.remove('bg-rikshaYellow', 'text-slate-900', 'font-bold');
+                    btn.classList.add('bg-white', 'text-slate-700');
+                }
+            });
+
+            document.querySelectorAll('[data-i18n]').forEach(elem => {
+                const key = elem.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    elem.textContent = translations[lang][key];
+                }
+            });
+
+            const nameInput = document.getElementById('booking-name');
+            if (nameInput) {
+                nameInput.placeholder = translations[lang]['phName'] || 'Enter name';
+            }
+
+            const aiInput = document.getElementById('ai-user-query');
+            if (aiInput) {
+                aiInput.placeholder = translations[lang]['aiPlaceholder'] || "Ask AI Travel Guide...";
+            }
+
+            updateDropdownOptions();
+        }
+
+        let currentGeneratedAiResponseText = "";
+
+        function setAiQuery(promptKey) {
+            const queryText = translations[currentLang][promptKey];
+            if (!queryText) return;
+            document.getElementById('ai-user-query').value = queryText;
+            submitAiQuery();
+        }
+
+        async function submitAiQuery() {
+            const queryInput = document.getElementById('ai-user-query');
+            const userQuery = queryInput.value.trim();
+            if (!userQuery) return;
+
+            const emptyState = document.getElementById('ai-empty-state');
+            const loadingState = document.getElementById('ai-loading-state');
+            const responseContainer = document.getElementById('ai-response-container');
+            const sourcesPanel = document.getElementById('ai-sources-panel');
+            const bookingAction = document.getElementById('ai-booking-action');
+
+            emptyState.classList.add('hidden');
+            responseContainer.classList.add('hidden');
+            sourcesPanel.classList.add('hidden');
+            bookingAction.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+
+            const systemPrompt = `You are a helpful, expert native AI Travel Guide and Tour Companion for 'Lo Middle Class Family' Auto Riksha Tourist Services in Botad, Gujarat.
+The current year is 2026. Keep your answers factual and helpful.
+Provide brief, highly engaging, tourist-friendly, and culturally respectful travel insights or itineraries.
+Write responses directly in the language of the query or language preference: current language setting is ${currentLang}.
+If the language is 'gu' output in beautiful Gujarati, if 'hi' output in Hindi, and if 'en' output in English.
+Make sure to emphasize that "Lo Middle Class Family Auto Riksha Service (Sumit-bhai: 7778867800)" is the absolute best way to travel comfortably and affordably to these attractions from Botad Junction or the Bus Stand.
+Avoid long-winded essays; instead, use neat formatting, clear bullet points, bold key highlights, and appropriate emojis.`;
+
+            const apiKey = ""; 
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                }
+            };
+
+            let delay = 1000;
+            const maxRetries = 3;
+            let response = null;
+
+            for (let attempt = 1; attempt <= maxRetries; attempt++) {
+                try {
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (response.ok) break;
+                } catch (err) {
+                    if (attempt === maxRetries) {
+                        handleAiError("Network connection failed. Please check your internet connectivity.");
+                        return;
+                    }
+                }
+                await new Promise(resolve => setTimeout(resolve, delay));
+                delay *= 2;
+            }
+
+            if (!response || !response.ok) {
+                handleAiError("The AI assistant is temporarily busy. Please try asking again shortly.");
+                return;
+            }
+
+            try {
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    const responseText = candidate.content.parts[0].text;
+                    currentGeneratedAiResponseText = responseText;
+
+                    const formattedHtml = formatMarkdownResponse(responseText);
+                    responseContainer.innerHTML = formattedHtml;
+
+                    let sourcesHtml = '';
+                    const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        const sources = groundingMetadata.groundingAttributions
+                            .map(attr => ({
+                                uri: attr.web?.uri,
+                                title: attr.web?.title
+                            }))
+                            .filter(src => src.uri && src.title);
+
+                        if (sources.length > 0) {
+                            sourcesHtml += `
+                                <div class="mt-6 pt-4 border-t border-slate-800 text-left">
+                                    <p class="text-xs text-slate-500 font-bold mb-2 flex items-center gap-1">
+                                        <i class="fa-solid fa-square-check text-emerald-500"></i> Verified Information Sources:
+                                    </p>
+                                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">`;
+                            sources.forEach(src => {
+                                sourcesHtml += `
+                                    <li>
+                                        <a href="${src.uri}" target="_blank" class="text-xs text-amber-400 hover:text-rikshaYellow hover:underline inline-flex items-center gap-1.5 transition">
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> ${src.title}
+                                        </a>
+                                    </li>`;
+                            });
+                            sourcesHtml += `</ul></div>`;
+                        }
+                    }
+
+                    sourcesPanel.innerHTML = sourcesHtml;
+
+                    loadingState.classList.add('hidden');
+                    responseContainer.classList.remove('hidden');
+                    if (sourcesHtml) sourcesPanel.classList.remove('hidden');
+                    bookingAction.classList.remove('hidden');
+
+                } else {
+                    handleAiError("Received an empty plan. Please try asking with more details!");
+                }
+            } catch (err) {
+                handleAiError("Error formatting your travel guide response. Please try again.");
+            }
+        }
+
+        function handleAiError(msg) {
+            const loadingState = document.getElementById('ai-loading-state');
+            const responseContainer = document.getElementById('ai-response-container');
+            
+            loadingState.classList.add('hidden');
+            responseContainer.innerHTML = `
+                <div class="p-4 bg-rose-500/10 border border-rose-500/30 text-rose-300 rounded-xl flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>${msg}</span>
+                </div>`;
+            responseContainer.classList.remove('hidden');
+        }
+
+        function formatMarkdownResponse(text) {
+            const lines = text.split('\n');
+            let htmlOutput = '';
+            let inList = false;
+            let listType = '';
+
+            lines.forEach(line => {
+                let cleanLine = line.trim();
+                
+                if (cleanLine.startsWith('* ') || cleanLine.startsWith('- ')) {
+                    if (!inList) {
+                        htmlOutput += '<ul class="list-disc list-inside space-y-2 text-slate-200 my-2">';
+                        inList = true;
+                        listType = 'ul';
+                    }
+                    let itemContent = cleanLine.substring(2);
+                    itemContent = parseBoldAndItalic(itemContent);
+                    htmlOutput += `<li>${itemContent}</li>`;
+                } 
+                else if (cleanLine.match(/^\d+\.\s/)) {
+                    if (!inList) {
+                        htmlOutput += '<ol class="list-decimal list-inside space-y-2 text-slate-200 my-2">';
+                        inList = true;
+                        listType = 'ol';
+                    }
+                    let itemContent = cleanLine.replace(/^\d+\.\s/, '');
+                    itemContent = parseBoldAndItalic(itemContent);
+                    htmlOutput += `<li>${itemContent}</li>`;
+                } 
+                else {
+                    if (inList) {
+                        htmlOutput += listType === 'ul' ? '</ul>' : '</ol>';
+                        inList = false;
+                    }
+                    if (cleanLine === '') {
+                        htmlOutput += '<div class="h-2"></div>';
+                    } else {
+                        htmlOutput += `<p class="text-slate-300 leading-relaxed mb-3">${parseBoldAndItalic(cleanLine)}</p>`;
+                    }
+                }
+            });
+
+            if (inList) {
+                htmlOutput += listType === 'ul' ? '</ul>' : '</ol>';
+            }
+            return htmlOutput;
+        }
+
+        function parseBoldAndItalic(text) {
+            let t = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-amber-400 font-extrabold">$1</strong>');
+            t = t.replace(/\*(.*?)\*/g, '<em class="italic text-slate-300">$1</em>');
+            return t;
+        }
+
+        function copyAiPlanToForm() {
+            if (!currentGeneratedAiResponseText) return;
+
+            // FIXED REGEX SyntaxError: Removed the invalid regex pattern with the unescaped slash
+            const cleanText = currentGeneratedAiResponseText
+                .replace(/\*\*/g, '') // strip markdown bold syntax safely
+                .replace(/\*/g, '')   // strip single asterisk syntax safely
+                .substring(0, 400) + "... [AI Planned Itinerary]";
+
+            const remarksBox = document.getElementById('booking-remarks');
+            if (remarksBox) {
+                remarksBox.value = cleanText;
+                document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+                showCustomNotification("AI itinerary successfully copied! Complete remaining details and tap book!");
+            }
+        }
+
+        function quickSarangpurPackage() {
+            document.getElementById('booking-pickup').value = "Botad Station (બોટાદ રેલવે સ્ટેશન)";
+            document.getElementById('booking-drop').value = "Sarangpur Hanuman Temple (સાળંગપુર હનુમાનજી મંદિર)";
+            document.getElementById('booking-remarks').value = "Sarangpur Hanuman ji Darshan Package (Waiting + Return ride required)";
+            
+            document.getElementById('booking-section').scrollIntoView({ behavior: 'smooth' });
+            showCustomNotification("Hanumanji Temple Tour package loaded! Fill remaining info and confirm via WhatsApp.");
+        }
+
+        function generateWhatsAppMessage(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('booking-name').value;
+            const passengers = document.getElementById('booking-passengers').value;
+            const pickup = document.getElementById('booking-pickup').value;
+            const drop = document.getElementById('booking-drop').value;
+            const date = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
+            const remarks = document.getElementById('booking-remarks').value || 'None';
+
+            const textMessage = `*✨ LO MIDDLE CLASS FAMILY BOOKING REQ ✨*
+-----------------------------
+👤 *Passenger:* ${name}
+👪 *Passengers Count:* ${passengers}
+📍 *Pickup Location:* ${pickup}
+🏁 *Drop Location:* ${drop}
+📅 *Journey Date:* ${date}
+⏰ *Journey Time:* ${time}
+📝 *Remarks:* ${remarks}
+-----------------------------
+_Please confirm availability and dispatch auto! Thank you Sumit-bhai!_`;
+
+            const encodedMessage = encodeURIComponent(textMessage);
+            const whatsappURL = `https://api.whatsapp.com/send?phone=917778867800&text=${encodedMessage}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+
+        function setupFaqs() {
+            const btns = document.querySelectorAll('.faq-btn');
+            btns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const panel = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (panel.style.maxHeight && panel.style.maxHeight !== '0px') {
+                        panel.style.maxHeight = '0px';
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        document.querySelectorAll('.faq-panel').forEach(p => p.style.maxHeight = '0px');
+                        document.querySelectorAll('.faq-btn i').forEach(i => i.style.transform = 'rotate(0deg)');
+                        
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        }
+
+        function showCustomNotification(message) {
+            const toast = document.getElementById('toast-notification');
+            const toastText = document.getElementById('toast-text');
+            if(!toast || !toastText) return;
+
+            toastText.textContent = message;
+            toast.classList.remove('translate-y-10', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-10', 'opacity-0');
+            }, 4000);
+        }
+
+        window.onload = function() {
+            // Set default date to today
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.getElementById('booking-date');
+            if (dateInput) {
+                dateInput.value = today;
+            }
+
+            changeLanguage('hi');
+            setupFaqs();
+        }
+    </script>
+</body>
+</html>
